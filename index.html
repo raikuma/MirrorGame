@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirror Game</title>
+  <script src="dependencies/jquery-3.6.1.min.js"></script>
+  <link href="dependencies/daisyui.css" rel="stylesheet" type="text/css" />
+  <script src="dependencies/tailwindcss.js"></script>
+</head>
+
+<body>
+  <div class="flex">
+    <div class="max-w-min border flex flex-col gap-2 p-1" style="height: 450">
+      <div class="text-center text-2xl">History</div>
+      <table class="table table-fixed">
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Start</td>
+            <td>Reflect</td>
+            <td>Goal</td>
+          </tr>
+        </thead>
+      </table>
+      <div id="historyDiv" class="h-60 overflow-y-scroll">
+        <table id="historyTable" class="w-full table table-fixed">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <label>Start Point: </label>
+        <input id="queryInput" type="number" min=1 max=20 class="input input-bordered" value=1>
+      </div>
+      <button id="queryButton" class="btn w-full">Query</button>
+    </div>
+    <div>
+      <canvas id="canvas" class="border" height=450 width=862.5></canvas>
+      <p>To rotate piece, press R while drag.</p>
+      <p>Hover number on board to see laser preview of your submit.</p>
+      <p>Click number on board to set start point easily.</p>
+      <button id="submitButton" class="btn mt-1 w-full">submit</button>
+      <p id="resultText"></p>
+    </div>
+  </div>
+  <script src="src/utils.js"></script>
+  <script src="src/mirrorGame.js"></script>
+  <script src="src/gameObject.js"></script>
+  <script src="src/renderer.js"></script>
+  <script src="src/main.js"></script>
+</body>
+
+</html>
